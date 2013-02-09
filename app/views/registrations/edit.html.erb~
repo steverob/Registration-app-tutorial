@@ -1,0 +1,8 @@
+.page-header
+  %h3 Edit Details
+
+=render 'form'
+
+
+<%= link_to 'Show', @registration %> |
+<%= link_to 'Back', registrations_path %>

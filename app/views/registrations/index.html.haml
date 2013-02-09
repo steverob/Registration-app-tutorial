@@ -1,0 +1,22 @@
+
+
+.page-header.brand
+  %center
+    %h2 Registered Already?
+= form_tag registration_path(1),:method=>"GET",:class=>"form-horizontal" do
+  .control-group
+    =label_tag "Prayudh ID:",nil,:class=>"control-label"
+    .controls
+      = text_field_tag :pid,"",:placeholder=>"Prayudh ID",:class=>"input"
+      =submit_tag "Check Registration",:class=>"btn btn-primary"
+
+%hr
+%center
+  %h5 OR
+%hr
+
+
+.page-header.brand
+  %center
+    %h2 New Registration
+= render 'form'

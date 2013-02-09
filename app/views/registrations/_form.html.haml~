@@ -1,0 +1,25 @@
+= form_for(@registration,:html=>{:class=>"form-horizontal"}) do |f|
+
+  .control-group
+    =f.label :name, :class=>"control-label"
+    .controls
+      = f.text_field :name,:class=>"input",:required=>"required"
+  .control-group
+    =f.label :college, :class=>"control-label"
+    .controls
+      = f.text_field :college,:class=>"input",:required=>"required"
+  .control-group
+    =f.label :year, :class=>"control-label"
+    .controls
+      = f.select :year,[["I","1"],["II","2"],["III","3"],["IV","4"]],:class=>"select_field",:required=>"required"
+  .control-group
+    =f.label :email, :class=>"control-label"
+    .controls
+      = f.email_field :email,:class=>"input",:required=>"required"
+  .control-group
+    =f.label :phone, :class=>"control-label"
+    .controls
+      = f.text_field :phone,:class=>"input"
+
+  .form-actions
+    = f.submit "Register!",:class=>"btn btn-primary"

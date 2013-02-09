@@ -1,0 +1,25 @@
+%legend
+  .brand
+    = "#{@registration.name} / #{@registration.pid}"
+
+%dl.dl-horizontal
+  %dt
+    %strong College:
+  %dd= @registration.college
+  %br
+  %dt
+    %strong Year:
+  %dd= @registration.formatted_year
+  %br
+  %dt
+    %strong Email:
+  %dd= @registration.email
+  %br
+  %dt
+    %strong Phone:
+  %dd= @registration.phone
+
+.form-actions
+  = link_to "<i class='icon-chevron-left'></i>&nbsp;Back".html_safe,registrations_path,:class=>"btn btn-small "
+
+  = link_to "<i class='icon-edit'></i>&nbsp;Edit".html_safe,edit_registration_path(@registration),:class=>"btn btn-primary btn-small "

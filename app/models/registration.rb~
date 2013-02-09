@@ -1,0 +1,14 @@
+class Registration < ActiveRecord::Base
+  attr_accessible :college, :email, :name, :phone, :pid, :year
+
+  def formatted_year
+    if self.year=="1"
+      return "I"
+    end
+  end
+
+  def generate_pid
+    self.pid="PRH"+format("%04d",self.id)
+    self.save
+  end
+end
