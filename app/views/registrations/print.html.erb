@@ -1,0 +1,26 @@
+<center>
+  <h3>Prayudh 2013 Registrations</h3>
+  <h5>March 2nd 2013</h5>
+  <h5>Panimalar Institute of Technology</h5>
+  <hr>
+  <table>
+    <tr>
+      <th>PID</th>
+      <th>Name</th>
+      <th>College</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+    <% @registrations.each do |reg| %>
+      <tr>
+        <td><%= reg.pid %></td>
+        <td><%= reg.name %></td>
+        <td><%= reg.college %></td>
+        <td><%= reg.email %></td>
+        <td><%= reg.phone %></td>
+      </tr>
+    <%end%>
+  </table>
+  <div class="noPrint">
+   <center><%= link_to "Back",list_path %>&nbsp;&nbsp;<a href="#" onClick=" window.print(); return false">Print this page</a></center></div></center>
+</center>

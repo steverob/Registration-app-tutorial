@@ -22,8 +22,7 @@ group :assets do
 end
 
 group :production do
-  gem 'postgres'
-  gem 'thin'
+  gem 'pg'
 end
 
 group :development do
@@ -31,7 +30,7 @@ group :development do
 end
 
 gem 'jquery-rails'
-
+gem 'kaminari'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

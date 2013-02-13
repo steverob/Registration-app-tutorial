@@ -1,0 +1,15 @@
+.page-header.brand
+  %h3 Participants List
+%table.table.table-condensed.table-hover
+  %thead
+    %tr
+      %th PID
+      %th Name
+      %th College
+      %th Phone
+  %tbody
+    =render @registrations
+= paginate @registrations, theme: "bootstrap"
+.form-actions
+  =link_to "<i class='icon-chevron-left'></i>&nbsp;Back".html_safe,registrations_path,:class=>"btn btn-small"
+  =link_to "<i class='icon-print'></i>&nbsp;Print".html_safe,print_path,:class=>"btn btn-small btn-primary"

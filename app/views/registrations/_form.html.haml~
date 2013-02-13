@@ -22,4 +22,6 @@
       = f.text_field :phone,:class=>"input"
 
   .form-actions
-    = f.submit "Register!",:class=>"btn btn-primary"
+    %input(name="commit" type="submit" class="btn btn-primary")
+      %i.icon-ok
+      Register!

@@ -1,6 +1,7 @@
 class RegistrationsController < ApplicationController
   # GET /registrations
   # GET /registrations.json
+  layout "out", :only=>[:print]
   def index
     @registration = Registration.new
 
@@ -13,12 +14,21 @@ class RegistrationsController < ApplicationController
   # GET /registrations/1
   # GET /registrations/1.json
   def show
-    @registration = Registration.find_by_pid(params[:pid])
+    @registration = Registration.find_by_pid("PRH"+params[:pid])
 
     if @registration.nil?
       redirect_to registrations_path,alert: "You have not registered already! Please register."
     end
 
+  end
+
+  def list
+    @registrations=Registration.all
+    @registrations=Kaminari.paginate_array(@registrations).page(params[:page]).per(3)
+  end
+
+  def print
+    @registrations=Registration.all
   end
 
   # GET /registrations/new
@@ -44,9 +54,9 @@ class RegistrationsController < ApplicationController
       @registration = Registration.new(params[:registration])
       if @registration.save
         @registration.generate_pid
-        redirect_to registration_path({:id=>1,:pid=>@registration.pid}), notice: 'Registration was succesful!'
+        redirect_to registration_path({:id=>1,:pid=>@registration.pid}), alert: 'Registration was succesful!'
       else
-        redirect_to registrations_path,notice: "Registration Failed! Try again."
+        redirect_to registrations_path,alert: "Registration Failed! Try again."
       end
     else
       redirect_to registrations_path,notice: "Given email has already been registered!"
@@ -61,7 +71,7 @@ class RegistrationsController < ApplicationController
 
     respond_to do |format|
       if @registration.update_attributes(params[:registration])
-        format.html { redirect_to @registration, notice: 'Registration was successfully updated.' }
+        format.html { redirect_to registration_path({:id=>1,:pid=>@registration.pid}), notice: 'Registration was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -1,0 +1,5 @@
+%tr
+  %td= registration.pid
+  %td= registration.name
+  %td= registration.college
+  %td= registration.phone

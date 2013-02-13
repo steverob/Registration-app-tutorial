@@ -9,6 +9,23 @@
   height: 100%;
 
 }
+
+.btn-red-flat {
+  background-color: hsl(360, 71%, 37%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a11b1b", endColorstr="#a11b1b");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#a11b1b), to(#a11b1b));
+  background-image: -moz-linear-gradient(top, #a11b1b, #a11b1b);
+  background-image: -ms-linear-gradient(top, #a11b1b, #a11b1b);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a11b1b), color-stop(100%, #a11b1b));
+  background-image: -webkit-linear-gradient(top, #a11b1b, #a11b1b);
+  background-image: -o-linear-gradient(top, #a11b1b, #a11b1b);
+  background-image: linear-gradient(#a11b1b, #a11b1b);
+  border-color: #a11b1b #a11b1b hsl(360, 71%, 37%);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.00);
+  -webkit-font-smoothing: antialiased;
+}
 .dl-horizontal
 {
   font-size: 17px;
@@ -59,7 +76,9 @@ body {
 // Example:
 // @linkColor: #ff0000;
 
-
+.btn-primary {
+  .buttonBackground(@red, darken(@navbarBackground, 5%));
+}
 // Navbar
 // -------------------------
 @navbarCollapseWidth:             979px;

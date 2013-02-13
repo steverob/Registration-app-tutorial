@@ -1,0 +1,53 @@
+<html>
+<head>
+  <title>rTester</title>
+
+  <%= javascript_include_tag "application" %>
+
+
+  <%= csrf_meta_tags %>
+  <style type="text/css" media="screen">
+    b.heading
+    {
+      font-size:120%;
+    }
+    table
+    {
+    border-collapse:collapse;
+    }
+    .stats
+    {
+      border: 0px;
+    }
+    table,th, td
+    {
+    border: 1px solid black;
+    padding: 5px 5px;
+    font-size: 14;
+    }
+     h3{
+      font-size: 17;
+    }
+  </style>
+    <style type="text/css" media="print">
+    table
+    {
+    border-collapse:collapse;
+    width:500px;
+    }
+    table,th, td
+    {
+    border: 1px solid black;
+    padding: 3px 3px;
+    font-size: 14;
+    }
+      .noPrint {
+          display: none;
+          }
+  </style>
+
+</head>
+<body>
+  <%= yield %>
+</body>
+</html>

@@ -1,5 +1,3 @@
-
-
 .page-header.brand
   %center
     %h2 Registered Already?
@@ -7,8 +5,16 @@
   .control-group
     =label_tag "Prayudh ID:",nil,:class=>"control-label"
     .controls
-      = text_field_tag :pid,"",:placeholder=>"Prayudh ID",:class=>"input"
-      =submit_tag "Check Registration",:class=>"btn btn-primary"
+      .input-prepend
+        %span.add-on PRH
+
+        = text_field_tag :pid,"",:placeholder=>"Prayudh ID",:class=>"input",:id=>"prependedInput"
+      %br
+      %br
+      %button{type: "submit",class:"btn btn-primary"}
+        %i.icon-search
+        Check Registration
+
 
 %hr
 %center
@@ -20,3 +26,7 @@
   %center
     %h2 New Registration
 = render 'form'
+
+%br
+%br
+=link_to "View Registrations",list_path,:class=>"btn btn-mini pull-right"

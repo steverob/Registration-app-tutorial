@@ -1,13 +1,20 @@
-
-
 .page-header.brand
-  %h2 Registered Already?
+  %center
+    %h2 Registered Already?
 = form_tag registration_path(1),:method=>"GET",:class=>"form-horizontal" do
   .control-group
     =label_tag "Prayudh ID:",nil,:class=>"control-label"
     .controls
-      = text_field_tag :pid,"",:placeholder=>"Prayudh ID",:class=>"input"
-      =submit_tag "Check Registration",:class=>"btn btn-primary"
+      .input-prepend
+        %span.add-on PRH
+
+        = text_field_tag :pid,"",:placeholder=>"Prayudh ID",:class=>"input",:id=>"prependedInput"
+      %br
+      %br
+      %button{type: "submit",class:"btn btn-primary"}
+        %i.icon-search
+        Check Registration
+      //=submit_tag "<i class='icon-search'></i>Check Registration".html_safe,:class=>"btn btn-primary"
 
 %hr
 %center
@@ -16,5 +23,10 @@
 
 
 .page-header.brand
-  %h2 New Registration
+  %center
+    %h2 New Registration
 = render 'form'
+
+%br
+%br
+=link_to "View Registrations",list_path,:class=>"btn btn-mini pull-right"

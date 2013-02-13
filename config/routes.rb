@@ -1,4 +1,6 @@
 PrayudhReg::Application.routes.draw do
+  match "registrations/list"=>"registrations#list",:as=>:list
+  match "registrations/print"=>"registrations#print",:as=>:print
   resources :registrations
 
 
